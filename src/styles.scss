@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+// Roboto font from google fonts.
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+// Theme for angular material.
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// Icons from angular material
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// Font awesome
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body{
+    font-family: 'Roboto', Helvetica, sans-serif;
+}

@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <mat-form-field flexLayout="row" fxFlex="60">
+    <input matInput type="text" [(ngModel)]="taskText" placeholder="Añade una tarea" (keydown.enter)="addTask()">
+  </mat-form-field>
+  <button
+    (click)="addTask()"
+    mat-mini-fab color="primary"><i class="fa fa-plus"></i></button>
+</div>
+
+<mat-list>
+  <mat-list-item
+    [ngClass]="{done: task.done}"
+    *ngFor="let task of taskList; index as i">
+    <div class="task-container" fxLayout="row" fxLayoutAlign="start center">
+      <mat-checkbox [(ngModel)]="task.done"></mat-checkbox>
+      <span fxFlex="grow" class="task-text">&nbsp;{{ task.text }}</span>
+      <div class="task-controls" fxFlexAlign="end">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="deleteTask(i)">
+            <mat-icon>delete</mat-icon> delete
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list>
